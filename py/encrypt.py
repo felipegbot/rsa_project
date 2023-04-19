@@ -46,7 +46,7 @@ def encrypt():
     print("N = " + str(n))
     print("Z = " + str(z))
 
-    # Calcula os números coprimos de Z
+    # Seleciona D, sendo D proveniente dos números coprimos de Z
     coprimos = calculaCoprimos(z)
     # Escolhe um número coprimo de Z aleatoriamente
     coprimoEscolhido = Random.choice(coprimos)
@@ -61,64 +61,9 @@ def encrypt():
     # O usuário insere o texto a ser criptografado
     text = input("\nInsira o texto a ser criptografado: ")
     # O texto é criptografado usando uma função auxiliar
-    textoCriptografado = encryptText(text, coprimoEscolhido, n)
+    textoCriptografado = encryptText(text, e, n)
 
     # Imprime o texto criptografado na tela
     print("\n --- Resultado ---")
     print("Texto criptografado: " + textoCriptografado)
     print("\n")
-
-def decrypt():
-    flagE = 0
-    flagN = 0
-    # O usuário insere o texto a ser descriptografado
-    text = input("Insira o texto a ser descriptografado: ")
-
-    # O usuário insere o valor de E
-    while(flagE == 0):
-        # É usado um try/except para garantir que o valor inserido seja numérico
-        try:
-            e = int(input("Insira o valor de E: "))
-            flagE = 1
-        except:
-            print("E não é numérico\n")
-
-    # O usuário insere o valor de N
-    while(flagN == 0):
-        # É usado um try/except para garantir que o valor inserido seja numérico
-        try:
-            n = int(input("Insira o valor de n: "))
-            flagN = 1
-        except:
-            print("N não é numérico\n")
-
-    # O texto é descriptografado usando uma função auxiliar
-    textoDescriptografado = decryptText(text, e, n)
-
-    # Imprime o texto descriptografado na tela
-    print("\n --- Resultado ---")
-    print("Texto descriptografado: " + textoDescriptografado)
-
-def main():
-    flag=0
-    while(flag==0):
-        # O usuário escolhe a opção desejada
-        print("--- RSA ---")
-        print("1 - Criptografar")
-        print("2 - Descriptografar")
-        print("3 - Sair")
-        option = input("Insira a opção desejada: ")
-        print('\n')
-        # O sistema redireciona para a função desejada
-        if(option == "1"):
-            encrypt()
-        elif(option == "2"):
-            decrypt()
-        elif(option == "3"):
-            flag=1
-            exit()
-        else:
-            print("Opção inválida, tente novamente")
-
-
-main()

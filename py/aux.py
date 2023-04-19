@@ -8,6 +8,7 @@ def verificaPrimo(n):
     return True
 
 def encryptText(text: str, valorD: int, valorN: int):
+    print("\n valores inseridos " + str(valorD) + " " + str(valorN))
     result = ""
     for i in range(len(text)):
         # Pega o código ASCII do caractere
@@ -15,13 +16,18 @@ def encryptText(text: str, valorD: int, valorN: int):
         # calcula (TEXTO ORIGINAL ^ E) mod N
         charCodeCriptografado = pow(charCode, valorD, valorN)
         # Converte o código ASCII para caractere e concatena com o resultado
+        print(pow(charCode, valorD, valorN) , " valor na tabela ascii")
         result += chr(charCodeCriptografado)
     return result
 
 def decryptText(text: str, valorE: int, valorN: int):
     result = ""
+    print("\n valores inseridos " + str(valorE) + " " + str(valorN))
+
     for i in range(len(text)):
         charCode = ord(text[i])
+        # calcula (TEXTO CRIPTOGRAFADO ^ D) mod N
+        print(pow(charCode, valorE, valorN) , " valor na tabela ascii")
         charCodeDescriptografado = pow(charCode, valorE, valorN)
         result += chr(charCodeDescriptografado)
     return result
