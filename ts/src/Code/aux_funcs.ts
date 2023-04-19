@@ -17,6 +17,7 @@ export function calculaCoprimos(primeiroNumero: number) {
   let coprimos = [];
   for (let i = 1; i < primeiroNumero; i++) {
     // Se o MDC entre os dois números for 1, então são primos entre si
+    if (coprimos.length > 100) break;
     if (calculaMDC(primeiroNumero, i) === 1) coprimos.push(i);
   }
   return coprimos;
