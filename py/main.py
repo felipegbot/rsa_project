@@ -4,7 +4,7 @@ def main():
     flag=0
     while(flag==0):
         # O usuário escolhe a opção desejada
-        print("--- RSA ---")
+        print("\n--- RSA ---")
         print("1 - Criptografar")
         print("2 - Descriptografar")
         print("3 - Sair")

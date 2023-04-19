@@ -11,7 +11,7 @@ def decrypt():
     while(flagChave == 0):
         # É usado um try/except para garantir que o valor inserido seja numérico
         try:
-            chave = int(input("Insira o valor da chave: "))
+            chave = int(input("Insira o valor da chave (D): "))
             flagChave = 1
         except:
             print("a chave não é numérica\n")
@@ -20,7 +20,7 @@ def decrypt():
     while(flagN == 0):
         # É usado um try/except para garantir que o valor inserido seja numérico
         try:
-            n = int(input("Insira o valor de n: "))
+            n = int(input("Insira o valor de N: "))
             flagN = 1
         except:
             print("N não é numérico\n")

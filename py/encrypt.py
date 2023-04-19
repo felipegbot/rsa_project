@@ -66,4 +66,3 @@ def encrypt():
     # Imprime o texto criptografado na tela
     print("\n --- Resultado ---")
     print("Texto criptografado: " + textoCriptografado)
-    print("\n")
