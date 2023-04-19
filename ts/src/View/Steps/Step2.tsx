@@ -1,5 +1,6 @@
 import React from "react";
 import rsa from "../../Code/rsa_crypt";
+import "./styles.css";
 export const Step2 = () => {
   const [q, setQ] = React.useState(0);
 
@@ -14,21 +15,21 @@ export const Step2 = () => {
 
   const handleCoprimos = () => {
     console.log("Z: " + rsa.z);
-    const coprimoEscolhido = rsa.gerarCoprimos();
-    console.log("coprimo escolhido: " + coprimoEscolhido);
+    const coprimosPossiveis = rsa.gerarCoprimos();
+    console.log("coprimos: " + coprimosPossiveis);
   };
 
   return (
-    <div>
-      <input
+    <div className="minhadiv">
+      {/* <input
         onChange={(inputValue) => {
           setQ(Number(inputValue.target.value));
         }}
         type="number"
-      />
-      <button onClick={handleSubmit}>Inserir Q</button>
+      /> */}
+      {/* <button onClick={handleSubmit}>Inserir Q</button>
       <br />
-      <button onClick={handleCoprimos}>Gerar coprimos</button>
+      <button onClick={handleCoprimos}>Gerar coprimos</button> */}
     </div>
   );
 };
