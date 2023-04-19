@@ -77,3 +77,8 @@ typings/
 
 # pycache
 **/__pycache__
+__pycache__/
+.py/__pycache__
+./py/__pycache__
+*.pyc
+py/__pycache__/aux.cpython-310.pyc
